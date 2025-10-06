@@ -152,14 +152,14 @@ footer a:hover { text-decoration:underline; }
 <section id="contact">
 <h2 class="section-title">Contact Me</h2>
 <div class="contact-card">
-<div class="form-field"><input type="text" id="name" placeholder="Your Name"></div>
-<div class="form-field"><input type="email" id="email" placeholder="Your Email"></div>
-<div class="form-field"><textarea id="message" placeholder="Your Message"></textarea></div>
+<div class="form-field"><input type="text" placeholder="Your Name"></div>
+<div class="form-field"><input type="email" placeholder="Your Email"></div>
+<div class="form-field"><textarea placeholder="Your Message"></textarea></div>
 <div class="form-field">
-<button class="send-btn whatsapp" id="whatsappBtn"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+<a class="send-btn whatsapp" href="https://wa.me/03163516125" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
 </div>
 <div class="form-field">
-<button class="send-btn gmail" id="gmailBtn"><i class="fas fa-envelope"></i> Gmail</button>
+<a class="send-btn gmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=zainiich04@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Gmail</a>
 </div>
 </div>
 </section>
@@ -181,33 +181,7 @@ const observer = new IntersectionObserver(entries=>{
   });
 },{threshold:0.15});
 sections.forEach(section=>observer.observe(section));
+</script>
 
-// Contact buttons functionality
-const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-const messageInput = document.getElementById('message');
-const whatsappBtn = document.getElementById('whatsappBtn');
-const gmailBtn = document.getElementById('gmailBtn');
-
-function validateFields() {
-  if (!nameInput.value || !emailInput.value || !messageInput.value) {
-    alert('Please fill in all fields!');
-    return false;
-  }
-  return true;
-}
-
-whatsappBtn.addEventListener('click', () => {
-  if (!validateFields()) return;
-  const phone = '03163516125';
-  const text = Name: ${nameInput.value}\nEmail: ${emailInput.value}\nMessage: ${messageInput.value};
-  const url = https://wa.me/${phone}?text=${encodeURIComponent(text)};
-  window.open(url, '_blank');
-});
-
-gmailBtn.addEventListener('click', () => {
-  if (!validateFields()) return;
-  const to = 'zainiich04@gmail.com';
-  const subject = Message from ${nameInput.value};
-  const body = Name: ${nameInput.value}\nEmail: ${emailInput.value}\nMessage: ${messageInput.value};
-  const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su
+</body>
+</html>
